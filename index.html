@@ -13,24 +13,8 @@
     />
 
     <title>Frontend Mentor | Age calculator app</title>
-    <!--  <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://fonts.googleapis.com/css?family=Poppins"
-    />
- -->
     <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <script src="assets/js/scripts.js" defer></script>
   </head>
 
   <body>
@@ -38,24 +22,18 @@
       <div class="date-selector">
         <div class="row">
           <div class="form-control">
-            <label for="day" class="error">Day</label>
-            <input
-              type="number"
-              name="day"
-              id="day"
-              class="error"
-              placeholder="DD"
-            />
+            <label for="day">Day</label>
+            <input type="number" name="day" id="day" placeholder="DD" />
             <span class="error-message">Must be a valid day</span>
           </div>
           <div class="form-control">
             <label for="month">Month</label>
-            <input type="text" name="month" id="month" placeholder="MM" />
+            <input type="number" name="month" id="month" placeholder="MM" />
             <span class="error-message">Must be a valid day</span>
           </div>
           <div class="form-control">
             <label for="year">Year</label>
-            <input type="text" name="year" id="year" placeholder="YYYY" />
+            <input type="number" name="year" id="year" placeholder="YYYY" />
             <span class="error-message">Must be a valid day</span>
           </div>
         </div>
