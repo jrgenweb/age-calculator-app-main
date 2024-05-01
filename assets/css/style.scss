@@ -1,0 +1,209 @@
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Regular.ttf");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Italic.ttf");
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Bold.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-ExtraBold.ttf");
+    font-weight: 900;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-ExtraBoldItalic.ttf");
+    font-weight: 900;
+    font-style: italic;
+}
+/*
+## Colors
+
+### Primary
+
+- Purple: hsl(259, 100%, 65%)
+- Light red: hsl(0, 100%, 67%)
+
+### Neutral
+
+- White: hsl(0, 0%, 100%)
+- Off white: hsl(0, 0%, 94%)
+- Light grey: hsl(0, 0%, 86%)
+- Smokey grey: hsl(0, 1%, 44%)
+- Off black: hsl(0, 0%, 8%)*/
+
+$clr-purple: hsl(259, 100%, 65%);
+$clr-light-red: hsl(0, 100%, 67%);
+
+$clr-neutral-white: hsl(0, 0%, 100%);
+$clr-neutral-off-white: hsl(0, 0%, 94%);
+$clr-neutral-light-grey: hsl(0, 0%, 86%);
+$clr-neutral-smoke-grey: hsl(0, 1%, 44%);
+$clr-off-black: hsl(0, 0%, 8%);
+
+$heading-l: 10.4rem;
+$heading-m: 3.2rem;
+$heading-s: 1.4rem;
+
+:root {
+    --fs-100: 12px;
+
+    --fs-500: 20px;
+
+    --fs-900: 56px;
+
+    --padding-x: 1.5rem;
+    --padding-y: 3rem;
+
+    --margin-top: 88px;
+}
+
+/*weights:
+    400i,
+    700,
+    800i */
+html {
+    font-family: "Poppins";
+}
+body {
+    font-size: 3.2rem;
+    background-color: $clr-neutral-off-white;
+    box-sizing: border-box;
+}
+@media (min-width: 600px) {
+    body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+    }
+}
+.calculator-app {
+    background-color: $clr-neutral-white;
+    max-width: 840px;
+    padding: var(--padding-y) var(--padding-x);
+    border-radius: 30px;
+    border-bottom-right-radius: 100px;
+
+    margin-top: var(--margin-top);
+    .date-selector .row {
+        display: flex;
+        gap: 1rem;
+        .form-control {
+            width: 100%;
+            & > * {
+                display: block;
+            }
+            & > *:not(:first-child) {
+                margin-top: 0.5rem;
+            }
+            label {
+                font-size: var(--fs-100);
+                letter-spacing: 0.5rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: $clr-neutral-smoke-grey;
+                cursor: pointer;
+                &.error {
+                    color: $clr-light-red;
+                }
+            }
+            input {
+                font-size: var(--fs-500);
+                font-weight: 700;
+                width: 60%;
+                border: 1px solid $clr-neutral-light-grey;
+                border-radius: 5px;
+                padding: 1rem;
+                margin-top: 0rem;
+                &.error {
+                    border-color: $clr-light-red;
+                }
+                cursor: pointer;
+                &:focus {
+                    outline: 1px solid $clr-purple;
+                }
+            }
+            .error-message {
+                font-size: 12px;
+                color: $clr-light-red;
+                font-style: italic;
+            }
+        }
+    }
+}
+
+.calculator-result {
+    border-top: 1px dotted $clr-neutral-light-grey;
+    margin-top: 63px;
+    position: relative;
+    padding-top: 3rem;
+
+    p {
+        font-size: var(--fs-900);
+        letter-spacing: -2%;
+        font-weight: 900;
+        font-style: italic;
+        padding: 0;
+        margin: 0;
+        text-wrap: nowrap;
+        span {
+            color: $clr-purple;
+            font-weight: 800;
+        }
+    }
+    .btn {
+        width: 64px;
+        aspect-ratio: 1;
+        background-color: $clr-purple;
+        margin: 2rem 0;
+        border-radius: 50%;
+        border: 0;
+        position: absolute;
+        top: -4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+        &:hover {
+            background-color: $clr-off-black;
+        }
+    }
+}
+
+@media (min-width: 37.5rem) {
+    :root {
+        --fs-100: 14px;
+
+        --fs-500: 32px;
+
+        --fs-900: 104px;
+
+        --padding-x: 56px;
+        --padding-y: 56px;
+
+        --margin-top: 88px;
+    }
+
+    .calculator-result {
+        .btn {
+            width: 96px;
+            top: -5rem;
+            left: unset;
+            right: -48px;
+        }
+    }
+}
